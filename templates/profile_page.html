@@ -1,0 +1,42 @@
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div id="user">
+        <img src="{{ data.get('avatarUrl')}}" height="100px" width="100px" class="profilePic">
+        <h1>{{ data.get('name')}}</h1>
+        <h2>Level: {{ data.get('expLevel') }}</h2>
+    </div>
+    <h2>Victories: {{ data.get('victories') }}</h2>
+    <h2>Trophies: {{ data.get('trophies') }}</h2>
+    <h2>Top Three Brawlers:</h2>
+    <div id="menu">
+    <ul>
+         <li>{{ topThree[0].get('name') }}</li>
+         <li>{{ topThree[1].get('name') }}</li>
+         <li>{{ topThree[2].get('name') }}</li>
+    </ul>
+    </div>
+    <div id="IMGmenu">
+        <ul>
+            <li><img src="{{url_for('static', filename='Colt_Skin-Default.png')}}" height="350px" width="250px"></li>
+            <li><img src="{{url_for('static', filename='Nita_Skin-Default.png')}}" height="350px" width="250px"></li>
+            <li><img src="{{url_for('static', filename='Shelly_Skin-Default.png')}}" height="350px" width="250px"></li>
+        </ul>
+    </div>
+    <div id="menu2">
+        <ul>
+            <li>
+               Trophies: {{ topThree[0].get('trophies') }} &nbsp;Rank: {{ topThree[0].get('rank') }} &nbsp;Power Level: {{ topThree[0].get('power') }}
+            </li>
+            <li>
+               Trophies: {{ topThree[1].get('trophies') }} &nbsp;Rank: {{ topThree[1].get('rank') }} &nbsp;Power Level: {{ topThree[1].get('power') }}
+            </li>
+            <li>
+               Trophies: {{ topThree[2].get('trophies') }} &nbsp;Rank: {{ topThree[2].get('rank') }} &nbsp;Power Level: {{ topThree[2].get('power') }}
+            </li>
+        </ul>
+    </div>
+ 
+    {% endblock %}
+</body>
+    

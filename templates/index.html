@@ -1,0 +1,13 @@
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <h1 id="title">Brawl Stars Profile Search</h1>
+    <div class="input">
+        <form name="search" action="/profile_name" method="post">
+                <label for="brawltag">Enter Brawl Tag:</label>  
+                <input id="brawltag" type="text" name="profilename">
+                <input type="submit" value="Go!">
+        </form>
+    </div>
+    {% endblock %}
+</body>
