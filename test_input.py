@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import requests
 
-token = 'API key goes here'
+token = 'api key goes here'
 
 app = Flask(__name__)
 
