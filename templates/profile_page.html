@@ -1,25 +1,40 @@
-<body class="profile_page">
+
+<script type="text/javascript"> 
+    var first_name = "{{ topThree[0].get('name') }}"
+    var second_name = "{{ topThree[1].get('name') }}"
+    var third_name = "{{ topThree[2].get('name') }}"
+</script>
+<script src="static/js/display_images.js"></script>
+
+<body onload="load()" class="profile_page">
     {% extends "layout.html" %}
     {% block content %}
     <div id="user">
         <img src="{{ data.get('avatarUrl')}}" height="100px" width="100px" class="profilePic">
         <h1>{{ data.get('name')}}</h1>
         <h2>Level: {{ data.get('expLevel') }}</h2>
+        <h2>{{ data.get('expFmt') }}</h2>
     </div>
     <h2>Victories: {{ data.get('victories') }}</h2>
-    <h2>Trophies: {{ data.get('trophies') }}</h2>
+    <h2 class="trophies"><img src="{{url_for('static', filename='images/other/trophy.png')}}" height="50px" width="50px">{{ data.get('trophies') }}</h2>
     <div class="row">
-            <div class="col" id="name">{{ topThree[0].get('name') }}</div>
-            <div class="col" id="name">{{ topThree[1].get('name') }}</div>
-            <div class="col" id="name">{{ topThree[2].get('name') }}</div>
-            <div class="w-100"></div>
-            <div class="col" id="img"><img src="{{url_for('static', filename='images/colt.png')}}" height="350px" width="300px"></div>
-            <div class="col" id="img"><img src="{{url_for('static', filename='images/nita.png')}}" height="350px" width="300px"></div>
-            <div class="col" id="img"><img src="{{url_for('static', filename='images/shelly.png')}}" height="380px" width="220px"></div>
-            <div class="w-100"></div>
-            <div class="col" id="stats">Trophies: {{ topThree[0].get('trophies') }} &nbsp;Rank: {{ topThree[0].get('rank') }} &nbsp;Power Level: {{ topThree[0].get('power') }}</div>
-            <div class="col" id="stats">Trophies: {{ topThree[1].get('trophies') }} &nbsp;Rank: {{ topThree[1].get('rank') }} &nbsp;Power Level: {{ topThree[1].get('power') }}</div>
-            <div class="col" id="stats">Trophies: {{ topThree[2].get('trophies') }} &nbsp;Rank: {{ topThree[2].get('rank') }} &nbsp;Power Level: {{ topThree[2].get('power') }}</div>
+        <div class="col" id="name">{{ topThree[0].get('name') }}</div>
+        <div class="col" id="name">{{ topThree[1].get('name') }}</div>
+        <div class="col" id="name">{{ topThree[2].get('name') }}</div>
+        <div class="w-100"></div>
+        <div class="col" id="img"><img src="nothing.jpg" height="300px" width="350px" id="image_1"></div>
+        <div class="col" id="img"><img src="nothing.jpg" height="300px" width="350px" id="image_2"></div>
+        <div class="col" id="img"><img src="nothing.jpg" height="300px" width="350px" id="image_3"></div>
+        <div class="w-100"></div>
+        <div class="col" id="stats"><img src="{{url_for('static', filename='images/other/trophy.png')}}" height="50px" width="50px">{{ topThree[0].get('trophies') }} 
+            &nbsp;<img src="{{url_for('static', filename='images/other/power.png')}}" height="50px" width="50px"> {{ topThree[0].get('power') }} 
+            &nbsp;Rank: {{ topThree[0].get('rank') }}</div>
+        <div class="col" id="stats"><img src="{{url_for('static', filename='images/other/trophy.png')}}" height="50px" width="50px">{{ topThree[1].get('trophies') }} 
+            &nbsp;<img src="{{url_for('static', filename='images/other/power.png')}}" height="50px" width="50px"> {{ topThree[1].get('power') }} 
+            &nbsp;Rank: {{ topThree[1].get('rank') }}</div>
+        <div class="col" id="stats"><img src="{{url_for('static', filename='images/other/trophy.png')}}" height="50px" width="50px">{{ topThree[2].get('trophies') }} 
+            &nbsp;<img src="{{url_for('static', filename='images/other/power.png')}}" height="50px" width="50px"> {{ topThree[2].get('power') }} 
+            &nbsp;Rank: {{ topThree[2].get('rank') }}</div>
     </div>
     {% endblock %}
 </body>

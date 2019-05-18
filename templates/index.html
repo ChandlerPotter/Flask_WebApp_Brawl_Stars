@@ -1,13 +1,17 @@
 <body class="index">
     {% extends "layout.html" %}
     {% block content %}
-    <h1 id="title"><img src="{{url_for('static', filename='images/title.png')}}" height="200px" width="400px"></h1>
+    <h1 id="title"><img src="{{url_for('static', filename='images/other/title.png')}}" height="200px" width="400px"></h1>
     <div class="input">
         <form name="search" action="/profile_name" method="post">
                 <label for="brawltag">Enter Brawl Tag:</label>  
                 <input id="brawltag" type="text" name="profilename">
-                <input type="submit" value="Go!">
+                <input type="submit" class="btn btn-danger" value="Go!">
         </form>
+    </div>
+    <div id="about" class="scroll">
+        <h1>About</h1>
+        <p>Stuff will go here</p>
     </div>
     {% endblock %}
 </body>

@@ -1,6 +1,20 @@
-<body class="leaderboards">
-{% extends "layout.html" %}
-    {% block content %}
-    <img src="{{url_for('static', filename='Colt_Skin-Default.png')}}" height="300px" width="150px">
-    {% endblock %}
-</body>
+<html>
+    <script type="text/javascript">
+        function load()
+        {
+        document.getElementById('image').src = displaydate();
+        }
+        
+        function displaydate()
+        {
+            if("{{ topThree[1].get('name') }}" == 'Colt')
+            {
+                return "{{url_for('static', filename='images/colt.png')}}";
+            }
+        }
+    </script>
+    
+    <body onload="load()" class="leaderboards">
+        <img src="nothing.jpg" id="image" name="image" height="350px" width="300px"/>
+    </body>
+</html> 

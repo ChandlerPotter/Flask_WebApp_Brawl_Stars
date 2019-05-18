@@ -13,10 +13,12 @@ body.leaderboards {
        1px 1px 0 #000;
 }
 body.index {
-  background-image: url('/static/images/hero_bg_brawlstars_.jpg');
+  background-image: url('/static/images/other/hero_bg_brawlstars_.jpg');
   background-position: center;
   background-size: cover;
+  background-attachment: scroll;
   background-repeat: no-repeat;
+  background-color: black;
   font-family: 'Lilita One', cursive;
   -webkit-text-stroke: 1px black;
    color: white;
@@ -29,7 +31,7 @@ body.index {
 }
 
 body.profile_page {
-  background-image: url('/static/images/bs_background.jpg');
+  background-image: url('/static/images/other/loading.png');
   background-size: cover;
   font-family: 'Lilita One', cursive;
   -webkit-text-stroke: 1px black;
@@ -56,17 +58,36 @@ body.profile_page {
     height: 30px;
 }
 
+#about {
+    position:absolute;
+    top:100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    -webkit-text-stroke: 0px black;
+   color: white;
+   text-shadow:
+      0px 0px 0 #000,
+      0px 0px 0 #000,  
+      0px 0px 0 #000,
+      0px 0px 0 #000,
+      0px 0px 0 #000;
+}
+#about_button {
+  background-color: transparent!important;
+  border: none;
+}
+
 .input
 {
     color: white;
     position:absolute;
-    width:450px;
+    /*width:450px;*/
     height:200px;
     left:40%;
     top:45%;
     margin-left:-50px;
     margin-top:-50px;
     font-size: 30;
+    padding-bottom: 50%;
 }
 
 #user {
@@ -85,8 +106,8 @@ body.profile_page {
 #stats {
   text-align: center;
   font-size: 32;
+  color: gold;
 }
-
 
 .navbar {
   background:rgba(0,0,0,0.5)!important; 
@@ -101,4 +122,20 @@ body.profile_page {
       1px -1px 0 #FFF,
       -1px 1px 0 #FFF,
        1px 1px 0 #FFF;
+}
+
+#image_1 {
+  border: 5px solid black;
+}
+
+#image_2 {
+  border: 5px solid black;
+}
+
+#image_3 {
+  border: 5px solid black;
+}
+
+h2.trophies {
+  color: gold;
 }
