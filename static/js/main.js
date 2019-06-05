@@ -56,9 +56,9 @@ function display_1() {
          : (second_name == 'Piper')    ? "static/images/brawlers/shelly_profile.png"
          : (second_name == 'Poco')     ? "static/images/brawlers/nita_profile.png"
          : (second_name == 'Tara')     ? "static/images/brawlers/bull_profile.png"
-         : (second_name == 'Gene')     ? "static/images/brawlers/gene_profile.png" //need img
-         : (second_name == 'Carl')     ? "static/images/brawlers/carl_profile.png"  //.
-         : (second_name == 'Rosa')     ? "static/images/brawlers/rosa_profile.png" //.
+         : (second_name == 'Gene')     ? "static/images/brawlers/gene_profile.png"
+         : (second_name == 'Carl')     ? "static/images/brawlers/carl_profile.png"  
+         : (second_name == 'Rosa')     ? "static/images/brawlers/rosa_profile.png" 
          :'nothing.png';
 }
 function display_2() {
@@ -89,3 +89,25 @@ function display_2() {
          : (third_name == 'Rosa')     ? "static/images/brawlers/rosa_profile.png" //.
          :'nothing.png';
 }
+
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
+
+
+  function move_1() {
+    var elem = document.getElementById("myBar"); 
+    var decimal = eval(expLvl) * 100;
+    console.log(decimal);
+    elem.style.width = decimal + '%'; 
+  }

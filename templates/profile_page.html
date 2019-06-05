@@ -3,19 +3,26 @@
     var first_name = "{{ topThree[0].get('name') }}"
     var second_name = "{{ topThree[1].get('name') }}"
     var third_name = "{{ topThree[2].get('name') }}"
+    var expLvl = "{{ data.get('expFmt') }}"
 </script>
-<script src="static/js/display_images.js"></script>
+<script src="static/js/main.js"></script>
 
-<body onload="load()" class="profile_page">
+<body onload="load(); move_1();" class="profile_page">
     {% extends "layout.html" %}
     {% block content %}
     <div id="user">
         <img src="{{ data.get('avatarUrl')}}" height="100px" width="100px" class="profilePic">
         <h1>{{ data.get('name')}}</h1>
         <h2>Level: {{ data.get('expLevel') }}</h2>
-        <h2>{{ data.get('expFmt') }}</h2>
+        <h2>Exp: {{ data.get('expFmt') }}</h2>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
     </div>
-    <h2>Victories: {{ data.get('victories') }}</h2>
+    <div class="row" id="victories">
+        <div class="col">3v3 Victories: {{ data.get('victories') }}</div>
+        <div class="col">Solo Victories: {{ data.get('soloShowdownVictories') }}</div>
+    </div>
     <h2 class="trophies"><img src="{{url_for('static', filename='images/other/trophy.png')}}" height="50px" width="50px">{{ data.get('trophies') }}</h2>
     <div class="row">
         <div class="col" id="name">{{ topThree[0].get('name') }}</div>

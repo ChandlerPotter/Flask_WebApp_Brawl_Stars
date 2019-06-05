@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import requests
 
-token = 'api token'
+token = 'Api token goes here'
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def home():
 def profile_name():
     profile_name = request.form['profilename']
 
-    url_player = "https://brawlapi.cf/api/player?tag="+profile_name
+    url_player = " https://api.brawlapi.cf/v1/player?tag="+profile_name
     headers = { 'Authorization': token, 'Accept-Encoding': 'gzip' }
     response = requests.request("GET", url_player, headers=headers)
 
@@ -28,20 +28,18 @@ def profile_name():
 
 @app.route('/leaderboards')
 def leaderboards():
-    #profile_name = request.form['profilename']
-
-    url_player = "https://brawlapi.cf/api/player?tag=889PJJLLL"
+    
+    url_board = "https://api.brawlapi.cf/v1/leaderboards/players"
     headers = { 'Authorization': token, 'Accept-Encoding': 'gzip' }
-    response = requests.request("GET", url_player, headers=headers)
+    response = requests.request("GET", url_board, headers=headers)
 
-    data = response.json()
-    brawlers = data.get('brawlers')
-    topThree = [0,1,2]
-    for i in range(3):
-        topThree[i] = brawlers[i]
-    image = './static/images/colt.png'
+    ldata = response.json()
+    names = []
+    for item in ldata:
+        names.append(item.get('name'))
+    
 
-    return render_template('leaderboards.html', topThree=topThree)
+    return render_template('leaderboards.html', ldata=ldata, names=names)
 
 if __name__ == '__main__':
     app.run(debug=True)
